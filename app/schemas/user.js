@@ -31,6 +31,8 @@ module.exports = {
     fullWithoutPassword : Joi.object().keys(_.omit(_.extend(base, serverSide, { id }), 'password')),
     authentication      : Joi.object().keys(_.pick(base, [ 'password', 'login' ])),
     full                : Joi.object().keys(_.extend(base, serverSide, { id })),
-    baseRaw             : base
+    baseRaw             : base,
+    get                 : array => {
+        return Joi.object().keys(_.pick(base, array));
+    }
 };
-

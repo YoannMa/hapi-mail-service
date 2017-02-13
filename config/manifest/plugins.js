@@ -40,6 +40,12 @@ module.exports = [
     },
     {
         plugin : {
+            register : 'hapi-io',
+            options  : {}
+        }
+    },
+    {
+        plugin : {
             register : 'hapi-swagger',
             options  : {
                 info              : {
